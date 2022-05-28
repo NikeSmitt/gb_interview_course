@@ -1,6 +1,6 @@
 import datetime
-
 from django.db import models
+from . import Section
 
 
 class ShopItem(models.Model):
@@ -12,6 +12,7 @@ class ShopItem(models.Model):
     vendor_name = models.CharField(max_length=50, null=True, db_index=True, verbose_name='Имя поставщика')
     item_unit = models.CharField(max_length=10, verbose_name='Единица измерения', default='шт')
     
+    sections = models.ManyToManyField(Section, related_name='shop_items', verbose_name='Разделы')
+    
     def __str__(self):
         return self.title
-    
