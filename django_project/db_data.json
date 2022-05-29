@@ -1,0 +1,23 @@
+[
+  {
+      "title": "Кроссовки для кошек",
+      "receipt_date": "2022-05-25",
+      "price": "1990.00",
+      "vendor_name": "Твой стиль",
+      "item_unit": "шт"
+  },
+  {
+      "title": "Ракета Ангара",
+      "receipt_date": "2023-05-25",
+      "price": "193500.00",
+      "vendor_name": "Роскосмос",
+      "item_unit": "шт"
+  },
+  {
+      "title": "Прикольные наклейки",
+      "receipt_date": "2022-10-25",
+      "price": "190.00",
+      "vendor_name": "Apes style",
+      "item_unit": "шт"
+  }
+]
