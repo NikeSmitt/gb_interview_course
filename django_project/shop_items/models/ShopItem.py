@@ -1,6 +1,9 @@
 import datetime
+
+from django.contrib.sites.managers import CurrentSiteManager
 from django.db import models
 from . import Section
+from django.contrib.sites.models import Site
 
 
 class ShopItem(models.Model):
@@ -13,6 +16,11 @@ class ShopItem(models.Model):
     item_unit = models.CharField(max_length=10, verbose_name='Единица измерения', default='шт')
     
     sections = models.ManyToManyField(Section, related_name='shop_items', verbose_name='Разделы')
+    
+    sites = models.ManyToManyField(Site, verbose_name='Принадлежность к сайтам')
+
+    objects = models.Manager()
+    on_site = CurrentSiteManager('sites')
     
     def __str__(self):
         return self.title
