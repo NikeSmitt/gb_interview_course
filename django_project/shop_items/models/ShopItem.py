@@ -14,6 +14,7 @@ class ShopItem(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=9, default=0, verbose_name='Цена товара')
     vendor_name = models.CharField(max_length=50, null=True, db_index=True, verbose_name='Имя поставщика')
     item_unit = models.CharField(max_length=10, verbose_name='Единица измерения', default='шт')
+    image = models.ImageField(verbose_name='Изображение товара', upload_to='item_images', null=True)
     
     sections = models.ManyToManyField(Section, related_name='shop_items', verbose_name='Разделы')
     
